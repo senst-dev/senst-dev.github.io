@@ -13,7 +13,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/project
         <a href={frontmatter.gh}>Check it out on Github</a>
         <p></em>{frontmatter.description}</em></p>
         <Image 
-            src={frontmatter.image.filepath} 
+            src={images[frontmatter.image.filepath]()} 
             width={750}
             height={422}
             format="webp"
