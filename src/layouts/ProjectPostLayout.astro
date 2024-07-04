@@ -1,0 +1,28 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+import { Image } from "astro:assets";
+
+const { frontmatter } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/projects/*.{jpeg,jpg,png,gif}')
+
+---
+<BaseLayout>
+    <div class="prose lg:prose-xl mx-auto px-5 py-5"> 
+        <h1>{frontmatter.title}</h1>
+        <a href={frontmatter.gh}>Check it out on Github</a>
+        <p></em>{frontmatter.description}</em></p>
+        <Image 
+            src={frontmatter.image.filepath} 
+            width={750}
+            height={422}
+            format="webp"
+            alt={frontmatter.image.alt}
+        />
+
+        <slot />
+        
+        <a href="/projects/">Return to Projects</a>
+
+    </div>
+</BaseLayout>

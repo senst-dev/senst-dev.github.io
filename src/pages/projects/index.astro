@@ -1,0 +1,15 @@
+---
+import BlogPost from '../../components/Blogpost.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const allProjects = await Astro.glob('../posts/project/*.md');
+---
+<BaseLayout>
+    <div class = "prose lg:prose-xl mx-auto px-5 py-5">
+        <h3>Published Projects</h3>
+
+        <p>Here's a collection of my published projects, to see some stuff I've been messing around with:</p>
+
+        {allProjects.map((project) => <li><a href={project.url}>{project.frontmatter.title}</a></li>)}
+    </div>
+</BaseLayout>

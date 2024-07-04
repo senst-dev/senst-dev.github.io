@@ -1,0 +1,38 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { pageTitle } = Astro.props;
+---
+<html lang="en">
+  <head>
+   <script is:inline>
+      // From https://github.com/saadeghi/theme-change/tree/master, same author as DaisyUI
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      } else
+        document.documentElement.setAttribute(
+          "data-theme",
+          localStorage.getItem("theme")
+        );
+    </script>
+    <script>
+      import { themeChange } from 'theme-change';
+      themeChange();
+    </script>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="flex flex-col h-screen justify-between ">
+      <Header />
+      <main class="mx-auto">
+        <h1>{pageTitle}</h1>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
