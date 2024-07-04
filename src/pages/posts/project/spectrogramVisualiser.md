@@ -3,7 +3,7 @@ layout: ../../../layouts/ProjectPostLayout.astro
 
 title: 'SpecVis'
 description: 'A webapp for creating spectrograms '
-gh: https://github.com/senst-dev/SpecVis
+gh: 'https://github.com/senst-dev/SpecVis'
 image:
     filepath: '/src/images/projects/spectrogramVisualiser.png'
     alt: 'A screenshot of the SpecVis app, showing a spectrogram (a visual representation of sound) and the python code to generate it.'

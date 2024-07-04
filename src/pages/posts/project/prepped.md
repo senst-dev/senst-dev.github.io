@@ -3,7 +3,7 @@ layout: ../../../layouts/ProjectPostLayout.astro
 
 title: 'Prepped'
 description: 'A Weekly Meal Planner Implemented Using React'
-gh: https://github.com/senst-dev/prepped
+gh: 'https://github.com/senst-dev/prepped'
 image:
     filepath: '/src/images/projects/prepped.png'
     alt: 'A screenshot of the Prepped app, showing a table of all days in week with a meal selected for breakfast, lunch, dinner.'
